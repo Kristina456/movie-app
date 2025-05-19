@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: var(--navigation-height);
+  background-color: #fff;
+}
+
+.navigation__link {
+  margin-right: 20px;
+}

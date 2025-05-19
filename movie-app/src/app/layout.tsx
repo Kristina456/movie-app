@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./../common/styles/global.css";
+import { Navigation } from "@/components/Navigation/Navigation.component";
 
 export const metadata: Metadata = {
   title: "Movie app",
@@ -13,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <nav>
+          <Navigation />
+        </nav>
+        <div className="children-wrapper">{children}</div>
+      </body>
     </html>
   );
 }
