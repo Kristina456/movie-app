@@ -1,0 +1,11 @@
+.popular-movies__wrapper {
+  display: flex;
+  overflow-y: auto;
+}
+
+.popular-movies__movie {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  min-width: 200px;
+}

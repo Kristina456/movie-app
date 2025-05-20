@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 import type { RuleSetRule, RuleSetUse } from "webpack";
 
 const nextConfig: NextConfig = {
+  images: {
+    domains: ["image.tmdb.org"],
+  },
   webpack: (config) => {
     /**
      * Ensure variables, functions, and mixins are loaded as resources into all

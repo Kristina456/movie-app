@@ -1,0 +1,10 @@
+.top-rated-movies__wrapper {
+  display: flex;
+}
+
+.top-rated-movies__movie {
+  padding: 30px;
+  margin: 10px;
+  border: 1px solid black;
+  width: calc(100% / 3 - 20px);
+}

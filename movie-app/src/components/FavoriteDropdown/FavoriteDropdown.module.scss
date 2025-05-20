@@ -1,0 +1,24 @@
+.favorite-dropdown {
+  position: relative;
+}
+
+.favorite-dropdown__content {
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  width: 200px;
+  border: 1px solid gray;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.favorite-dropdown__movie {
+  border-bottom: 1px solid gray;
+  display: flex;
+  padding: 10px 0;
+}
+
+.favorite-dropdown__movie:last-child {
+  border-bottom: none;
+}
