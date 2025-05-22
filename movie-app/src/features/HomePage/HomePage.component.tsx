@@ -1,5 +1,5 @@
 import { PopularMovies } from "@/components/PopularMovies/PopularMovies.component";
-import { MoviesData } from "../../dtos/MoviesData.dto";
+import { MoviesData } from "../../types/MoviesData.dto";
 import styles from "./HomePage.module.scss";
 import { TopRatedMovies } from "@/components/TopRatedMovies/TopRatedMovies.component";
 import { NewestMovies } from "@/components/NewestMovies/NewestMovies.component";
@@ -15,7 +15,6 @@ export function HomePage({
   topRatedMovies,
   popularMovies,
 }: Props) {
-  console.log(popularMovies, "newest movies");
   return (
     <div className={styles["home-page"]}>
       <section className={styles["home-page__top-rated"]}>

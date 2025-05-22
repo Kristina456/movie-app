@@ -1,4 +1,4 @@
-import { MoviesData } from "@/dtos/MoviesData.dto";
+import { MoviesData } from "@/types/MoviesData.dto";
 import styles from "./TopRatedMovies.module.scss";
 import Link from "next/link";
 import { FavoriteMovieButton } from "../FavoriteMovieButton/FavoriteMovieButton.component";
