@@ -1,7 +1,7 @@
 import { MoviesData } from "@/types/MoviesData.dto";
 import styles from "./PopularMovies.module.scss";
-import Link from "next/link";
-import { FavoriteMovieButton } from "../FavoriteMovieButton/FavoriteMovieButton.component";
+import { TopRatedMovie } from "../TopRatedMovie/TopRatedMovie.component";
+import { SectionTitle } from "../SectionTitle/SectionTitle.component";
 
 interface Props {
   popularMovies: MoviesData;
@@ -10,23 +10,13 @@ interface Props {
 export function PopularMovies({ popularMovies }: Props) {
   return (
     <div className={styles["popular-movies"]}>
-      <h2>Popular</h2>
+      <div className={styles["popular-movies__title"]}>
+        <SectionTitle title="Popular movies" />
+      </div>
       <div>
         {popularMovies.results.slice(0, 10).map((movie, index) => (
           <div key={index} className={styles["popular-movies__wrapper"]}>
-            <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-              }}
-              className={styles["popular-movies__movie"]}
-            >
-              <div>{movie.title}</div>
-              {movie.overview.slice(0, 100) || "There is no overview for now."}
-            </Link>
-            <FavoriteMovieButton
-              movieId={movie.id}
-              movieName={movie.original_title}
-            />
+            <TopRatedMovie movie={movie} />
           </div>
         ))}
       </div>

@@ -1,7 +1,7 @@
 import { MoviesData } from "@/types/MoviesData.dto";
 import styles from "./NewestMovies.module.scss";
-import Link from "next/link";
-import { FavoriteMovieButton } from "../FavoriteMovieButton/FavoriteMovieButton.component";
+import { SectionTitle } from "../SectionTitle/SectionTitle.component";
+import { TopRatedMovie } from "../TopRatedMovie/TopRatedMovie.component";
 
 interface Props {
   newestMovies: MoviesData;
@@ -10,23 +10,13 @@ interface Props {
 export function NewestMovies({ newestMovies }: Props) {
   return (
     <div className={styles["newest-movies"]}>
-      <h2>Newest</h2>
+      <div className={styles["newest-movies__title"]}>
+        <SectionTitle title="Newest movies" />
+      </div>
       <div>
         {newestMovies.results.map((movie, index) => (
           <div className={styles["newest-movies__wrapper"]} key={index}>
-            <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-              }}
-              className={styles["newest-movies__movie"]}
-            >
-              <div>{movie.title}</div>
-              <div>{movie.overview || "There is no overview for now."}</div>
-            </Link>
-            <FavoriteMovieButton
-              movieId={movie.id}
-              movieName={movie.original_title}
-            />
+            <TopRatedMovie movie={movie} />
           </div>
         ))}
       </div>

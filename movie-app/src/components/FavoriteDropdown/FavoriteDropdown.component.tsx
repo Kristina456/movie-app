@@ -39,13 +39,13 @@ export function FavoriteDropdown() {
     };
   }, []);
 
-  const handleButtonClick = () => {
-    setShowFavorites((prev) => !prev);
-  };
-
   return (
-    <div className={styles["favorite-dropdown"]}>
-      <button onClick={handleButtonClick}>Favorites</button>
+    <div
+      className={styles["favorite-dropdown"]}
+      onMouseEnter={() => setShowFavorites(true)}
+      onMouseLeave={() => setShowFavorites(false)}
+    >
+      <button className={styles["favorite-dropdown__button"]}>Favorites</button>
       {showFavorites && (
         <div className={styles["favorite-dropdown__content"]}>
           <ul>

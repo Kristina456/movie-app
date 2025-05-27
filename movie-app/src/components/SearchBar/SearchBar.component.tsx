@@ -28,12 +28,15 @@ export function SearchBar() {
 
   return (
     <div className={styles["search-bar"]}>
-      <label htmlFor="inputId">Search</label>
+      <label htmlFor="inputId" className={styles["search-bar__label"]}>
+        Search
+      </label>
       <input
         type="text"
         id="inputId"
         value={inputValue}
         onChange={handleChange}
+        className={styles["search-bar__input"]}
       />
       <div className={styles["search-bar__results"]}>
         {results?.results.map((movie) => (

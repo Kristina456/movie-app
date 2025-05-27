@@ -1,0 +1,61 @@
+.top-rated-movie {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 50px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px $color-tertiary;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.top-rated-movie:hover {
+  transform: scale(1.03);
+}
+
+.top-rated-movie__favorite-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.top-rated-movie__title {
+  font-size: 20px;
+  font-weight: 800;
+  max-width: 90%;
+}
+
+.top-rated-movie__link {
+  display: flex;
+  height: 100%;
+}
+
+.top-rated-movie__wrapper {
+  margin-left: 20px;
+}
+
+.top-rated-movie__release-date {
+  font-size: 15px;
+  color: $color-secondary;
+}
+
+.top-rated-movie__vote-average {
+  border: 1px solid $color-primary;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.top-rated-movie__vote-average {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}

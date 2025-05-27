@@ -1,5 +1,8 @@
 :root {
   --navigation-height: 50px;
+  --size-wrapper: 1920px;
+
+  --background-color: rgb(107, 107, 107);
 }
 
 html,
@@ -8,6 +11,8 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   min-height: 100vh;
+  font-family: "Lexend", sans-serif;
+  background-color: var(--background-color);
 }
 
 * {
@@ -27,7 +32,9 @@ a {
 }
 
 .children-wrapper {
-  margin-top: var(--navigation-height);
+  margin: var(--navigation-height) auto;
   overflow-y: auto;
   height: calc(100vh - var(--navigation-height));
+  max-width: var(--size-wrapper);
+  padding: 0 20px;
 }

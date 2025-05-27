@@ -5,10 +5,16 @@
   width: 100%;
   height: var(--navigation-height);
   background-color: #fff;
+  padding: 0px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgb(241, 241, 241);
 }
 
 .navigation__link {
   margin-right: 20px;
+  &--active {
+    color: $color-primary;
+  }
 }
 
 .navigation__links {
