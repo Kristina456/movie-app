@@ -1,0 +1,11 @@
+.most-watched-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.most-watched-list__movie-card {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  width: calc(100% / 3 - 40px);
+}

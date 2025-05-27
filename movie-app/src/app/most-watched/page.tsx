@@ -1,5 +1,5 @@
 import { MostWatchedPage } from "@/features/MostWatchedPage/MostWatchedPage.component";
 
-export default function getMostWatched() {
+export default async function getMostWatched() {
   return <MostWatchedPage />;
 }

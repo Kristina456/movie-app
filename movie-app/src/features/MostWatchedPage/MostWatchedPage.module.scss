@@ -1,0 +1,23 @@
+.most-watched-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.most-watched-page__movie-cards {
+  overflow-y: auto;
+}
+
+.most-watched-page__movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.most-watched-page__movies-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.most-watched-page__sentinel {
+  height: 1px;
+}

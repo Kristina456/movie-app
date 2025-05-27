@@ -1,0 +1,16 @@
+.movie-filters__filters {
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.movie-filters__genre {
+  margin: 4px 10px;
+  border: 1px solid gray;
+  padding: 4px 10px;
+}
+
+.movie-filters__genre:last-child {
+  margin-right: 0px;
+}
