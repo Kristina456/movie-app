@@ -1,18 +1,21 @@
 .favorite-dropdown {
   position: relative;
+  background-color: black;
 }
 
 .favorite-dropdown__content {
   position: absolute;
   right: 0;
   top: 20px;
-  background-color: #fff;
+  background-color: black;
+  color: #fff;
   width: 200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 10px;
   max-height: 300px;
   overflow-y: auto;
   z-index: 100;
+  border: 1px solid gray;
 }
 
 .favorite-dropdown__movie {

@@ -1,3 +1,5 @@
+import styles from "./Loading.module.scss";
+
 export function Loading() {
-  return <div>Loading...</div>;
+  return <div className={styles["loading"]}>Loading...</div>;
 }

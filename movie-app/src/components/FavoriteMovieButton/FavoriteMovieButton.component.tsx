@@ -1,5 +1,5 @@
 "use client";
-
+import styles from "./FavoriteMovieButton.module.scss";
 import { useEffect, useState } from "react";
 
 interface Props {
@@ -64,7 +64,7 @@ export function FavoriteMovieButton({ movieId, movieName }: Props) {
   };
 
   return (
-    <div>
+    <div className={styles["favorite-movie-button"]}>
       <button onClick={handleButtonClick}>{isFavorite ? "★" : "☆"}</button>
     </div>
   );

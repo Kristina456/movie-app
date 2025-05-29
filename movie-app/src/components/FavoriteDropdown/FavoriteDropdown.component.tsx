@@ -1,8 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import styles from "./FavoriteDropdown.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FavoriteMovieItem {
   id: number;
@@ -45,7 +45,14 @@ export function FavoriteDropdown() {
       onMouseEnter={() => setShowFavorites(true)}
       onMouseLeave={() => setShowFavorites(false)}
     >
-      <button className={styles["favorite-dropdown__button"]}>Favorites</button>
+      <button className={styles["favorite-dropdown__button"]}>
+        <Image
+          src="./images/star.svg"
+          alt="star image"
+          width={20}
+          height={20}
+        />
+      </button>
       {showFavorites && (
         <div className={styles["favorite-dropdown__content"]}>
           <ul>
