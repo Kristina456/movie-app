@@ -5,3 +5,38 @@
 .popular-movies__title {
   margin-bottom: 10px;
 }
+
+.popular-movies__slider {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  :global(.custom-prev) {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    transform: rotate(180deg);
+    cursor: pointer;
+    background-color: $color-secondary;
+    border-radius: 50%;
+  }
+
+  :global(.custom-next) {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-color: $color-secondary;
+    border-radius: 50%;
+  }
+
+  :global(.swiper-slide) {
+    height: unset;
+    z-index: 300;
+    padding: 20px 10px;
+  }
+}

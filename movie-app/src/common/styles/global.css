@@ -2,7 +2,8 @@
   --navigation-height: 50px;
   --size-wrapper: 1920px;
 
-  --background-color: rgb(107, 107, 107);
+  --background-color: rgb(0, 0, 0);
+  --wrapper-padding: 20px;
 }
 
 html,
@@ -29,12 +30,13 @@ a {
 .navigation-wrapper {
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 .children-wrapper {
-  margin: var(--navigation-height) auto;
+  margin-top: var(--navigation-height);
   overflow-y: auto;
   height: calc(100vh - var(--navigation-height));
   max-width: var(--size-wrapper);
-  padding: 0 20px;
+  padding: 0 var(--wrapper-padding);
 }
