@@ -17,6 +17,7 @@ export function MostWatchedPage() {
   const [genre, setGenre] = useState<number | null>(null);
   const [movieYear, setMovieYear] = useState<number | null>(null);
   const [voteAverage, setVoteAverage] = useState<number | null>(null);
+  const [showFilter, setShowFilter] = useState(false);
 
   const fetchMovies = async (
     page: number,
@@ -70,6 +71,7 @@ export function MostWatchedPage() {
   }, []);
 
   useEffect(() => {
+    if (page === 1) return;
     fetchMovies(
       page,
       movieYear !== null ? movieYear : undefined,
@@ -78,11 +80,18 @@ export function MostWatchedPage() {
     );
   }, [page]);
 
-  useEffect(() => {
+  const handleSearch = async () => {
     setPage(1);
     setMovies([]);
     setHasMore(true);
-  }, [genre, movieYear, voteAverage]);
+    setShowFilter(false);
+    await fetchMovies(
+      1,
+      movieYear !== null ? movieYear : undefined,
+      genre !== null ? genre.toString() : undefined,
+      voteAverage !== null ? voteAverage : undefined
+    );
+  };
 
   const observerRef = useInfiniteScroll(
     () => setPage((prev) => prev + 1),
@@ -97,6 +106,7 @@ export function MostWatchedPage() {
     setPage(1);
     setMovies([]);
     setHasMore(true);
+    setShowFilter(false);
   };
 
   return (
@@ -104,14 +114,19 @@ export function MostWatchedPage() {
       <MovieFilters
         genres={genres}
         setGenre={setGenre}
+        genre={genre}
         movieYear={movieYear}
         setMovieYear={setMovieYear}
         voteAverage={voteAverage}
         setVoteAverage={setVoteAverage}
         handleResetFilters={handleResetFilters}
+        handleSearch={handleSearch}
+        showFilter={showFilter}
+        setShowFilter={setShowFilter}
       />
+
       <MostWatchedList movies={movies} />
-      <div ref={observerRef} />
+      <div className={styles["observer-ref"]} ref={observerRef} />
       {isLoading && <Loading />}
     </div>
   );
