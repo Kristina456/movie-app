@@ -1,12 +1,12 @@
 import { HomePage } from "@/features/HomePage/HomePage.component";
 import {
-  getNowPlayingMovies,
+  getNewestMovies,
   getPopularMovies,
   getTopRatedMovies,
 } from "@/lib/apiService";
 
 export default async function getHomePage() {
-  const newestMovies = await getNowPlayingMovies();
+  const newestMovies = await getNewestMovies();
   const topRatedMovies = await getTopRatedMovies();
   const popularMovies = await getPopularMovies();
 

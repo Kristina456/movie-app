@@ -1,6 +1,7 @@
 import { MovieItem, MoviesData } from "@/types/MoviesData.dto";
 import { fetchFromApi } from "./fetchFromApi";
 import { MoviesGenres } from "@/types/MoviesGenres.dto";
+import { MovieCasts } from "@/types/CastsData.dto";
 
 export async function getMovieDetails(id: string): Promise<MovieItem | null> {
   try {
@@ -11,8 +12,17 @@ export async function getMovieDetails(id: string): Promise<MovieItem | null> {
   }
 }
 
-export async function getNowPlayingMovies(): Promise<MoviesData> {
-  return await getMovieApiWithPath("movie/now_playing");
+export async function getMovieCasts(id: string): Promise<MovieCasts | null> {
+  try {
+    return await fetchFromApi(`/movie/${id}/casts`);
+  } catch (error) {
+    console.error("Error fetching movie casts:", error);
+    return null;
+  }
+}
+
+export async function getNewestMovies(): Promise<MoviesData> {
+  return await getMovieApiWithPath("movie/upcoming");
 }
 
 export async function getTopRatedMovies(): Promise<MoviesData> {
@@ -25,6 +35,10 @@ export async function getPopularMovies(query?: string): Promise<MoviesData> {
 
 export async function getSearchedMovies(query: string): Promise<MoviesData> {
   return await getMovieApiWithPath(`search/movie?query=${query}`);
+}
+
+export async function getMovieCast(query: string): Promise<MoviesData> {
+  return await getMovieApiWithPath(`/movie/${query}/credits`);
 }
 
 export async function getPopularMoviesWithPage(

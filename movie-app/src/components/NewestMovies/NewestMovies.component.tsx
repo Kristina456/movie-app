@@ -1,7 +1,7 @@
 import { MoviesData } from "@/types/MoviesData.dto";
 import styles from "./NewestMovies.module.scss";
 import { SectionTitle } from "../SectionTitle/SectionTitle.component";
-import { TopRatedMovie } from "../TopRatedMovie/TopRatedMovie.component";
+import { MovieCard } from "../MovieCard/MovieCard.component";
 
 interface Props {
   newestMovies: MoviesData;
@@ -13,10 +13,10 @@ export function NewestMovies({ newestMovies }: Props) {
       <div className={styles["newest-movies__title"]}>
         <SectionTitle title="Newest movies" />
       </div>
-      <div>
+      <div className={styles["newest-movies__wrapper"]}>
         {newestMovies.results.map((movie, index) => (
-          <div className={styles["newest-movies__wrapper"]} key={index}>
-            <TopRatedMovie movie={movie} />
+          <div className={styles["newest-movies__movie"]} key={index}>
+            <MovieCard movie={movie} />
           </div>
         ))}
       </div>

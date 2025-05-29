@@ -1,10 +1,12 @@
 .newest-movies__wrapper {
   display: flex;
+  flex-wrap: wrap;
+}
+.newest-movies__title {
+  margin-bottom: 20px;
 }
 
 .newest-movies__movie {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid black;
-  width: 100%;
+  width: calc(100% / 6 - 10px);
+  margin: 0px 10px 10px 0px;
 }

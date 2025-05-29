@@ -1,61 +1,53 @@
 .top-rated-movie {
   position: relative;
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   height: 100%;
-  padding: 20px;
-  padding-bottom: 50px;
-  border: 1px solid black;
-  box-shadow: 0 4px 8px $color-tertiary;
+  box-shadow: $box-shadow-secondary;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  color: #d3d3d3;
+  border-radius: 20px;
 }
 
 .top-rated-movie:hover {
   transform: scale(1.03);
 }
 
-.top-rated-movie__favorite-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-}
-
 .top-rated-movie__title {
   font-size: 20px;
   font-weight: 800;
   max-width: 90%;
+  margin-bottom: 20px;
 }
 
 .top-rated-movie__link {
   display: flex;
+  flex-direction: column;
   height: 100%;
+  justify-content: flex-end;
 }
 
 .top-rated-movie__wrapper {
-  margin-left: 20px;
-}
-
-.top-rated-movie__release-date {
-  font-size: 15px;
-  color: $color-secondary;
-}
-
-.top-rated-movie__vote-average {
-  border: 1px solid $color-primary;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  font-weight: bold;
-}
-
-.top-rated-movie__vote-average {
+  padding: 20px;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(20, 20, 20, 1) 73%,
+    rgba(0, 0, 0, 0.1)
+  );
+  border-radius: 0 0 20px 20px;
   position: absolute;
-  right: 20px;
-  bottom: 10px;
+}
+
+.top-rated-movie__backdrop {
+  width: 100%;
+  z-index: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
 }
