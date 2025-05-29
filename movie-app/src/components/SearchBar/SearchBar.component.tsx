@@ -8,9 +8,11 @@ import Link from "next/link";
 export function SearchBar() {
   const [inputValue, setInputValue] = useState("");
   const [results, setResults] = useState<MoviesData | null>(null);
+  const [showResults, setShowResults] = useState(false);
 
   const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+    setShowResults(true);
     setInputValue(value);
 
     if (value.length > 0) {
@@ -26,6 +28,11 @@ export function SearchBar() {
     }
   };
 
+  const handleHideResults = () => {
+    setShowResults(false);
+    setInputValue("");
+  };
+
   return (
     <div className={styles["search-bar"]}>
       <label htmlFor="inputId" className={styles["search-bar__label"]}>
@@ -38,26 +45,39 @@ export function SearchBar() {
         onChange={handleChange}
         className={styles["search-bar__input"]}
       />
-      <div className={styles["search-bar__results"]}>
-        {results?.results.map((movie) => (
-          <div key={movie.id} className={styles["search-bar__result-wrapper"]}>
-            <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-              }}
-              className={styles["search-bar__result"]}
-            >
-              <Image
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                alt={`${movie.title} poster`}
-                width={60}
-                height={100}
-                className={styles["search-bar__image"]}
-              />
-              <div className={styles["search-bar__title"]}>{movie.title}</div>
-            </Link>
-          </div>
-        ))}
+      <div
+        className={styles["search-bar__results"]}
+        onMouseLeave={() => setShowResults(false)}
+      >
+        {showResults && (
+          <>
+            {results?.results.map((movie) => (
+              <div
+                key={movie.id}
+                className={styles["search-bar__result-wrapper"]}
+              >
+                <Link
+                  href={{
+                    pathname: `/movies/${movie.id}`,
+                  }}
+                  className={styles["search-bar__result"]}
+                  onClick={handleHideResults}
+                >
+                  <Image
+                    src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                    alt={`${movie.title} poster`}
+                    width={60}
+                    height={100}
+                    className={styles["search-bar__image"]}
+                  />
+                  <div className={styles["search-bar__title"]}>
+                    {movie.title}
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

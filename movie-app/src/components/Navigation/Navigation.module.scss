@@ -12,6 +12,8 @@
 
 .navigation__link {
   margin-right: 20px;
+  display: flex;
+  align-items: center;
   &--active {
     color: $color-primary;
   }

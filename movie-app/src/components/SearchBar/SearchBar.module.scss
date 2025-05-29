@@ -1,11 +1,17 @@
 .search-bar {
   position: relative;
+  input {
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
 }
 
 .search-bar__results {
   position: absolute;
   left: -100px;
-  background-color: #fff;
+  background-color: black;
+  border-radius: 10px;
+  color: #fff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,20 +22,30 @@
 
 .search-bar__result-wrapper {
   border: 1px solid gray;
+  border-radius: 8px;
   margin: 2px;
   display: flex;
   flex-direction: row;
   width: calc(100% / 2 - 10px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.search-bar__result-wrapper:hover {
+  transform: scale(1.02);
 }
 
 .search-bar__result {
   display: flex;
   flex-direction: row;
+  padding: 10px;
+  width: 100%;
 }
 
 .search-bar__title {
-  width: 100px;
-  padding: 2px;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .search-bar__label {

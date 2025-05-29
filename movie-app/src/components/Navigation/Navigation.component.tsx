@@ -14,11 +14,11 @@ export function Navigation() {
       <div>
         <Link className={styles["navigation__link"]} href="/">
           <Image
-            src="images/logo.svg"
+            src="./images/logo.svg"
             alt="logo image"
             width={100}
-            height={100}
-          ></Image>
+            height={50}
+          />
         </Link>
       </div>
       <div className={styles["navigation__links"]}>
