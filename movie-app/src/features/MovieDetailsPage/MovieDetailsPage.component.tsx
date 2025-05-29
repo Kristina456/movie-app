@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import { getMovieDetails } from "@/lib/apiService";
+import { getMovieCasts, getMovieDetails } from "@/lib/apiService";
+import { MovieDetails } from "@/components/MovieDetails/MovieDetails.component";
+import styles from "./MovieDetailsPage.module.scss";
 
 interface Props {
   params: { id: string };
@@ -8,36 +9,17 @@ interface Props {
 
 export async function MovieDetailsPage({ params }: Props) {
   const movieData = await getMovieDetails(params.id);
+  const movieCasts = await getMovieCasts(params.id);
 
-  if (!movieData) {
+  if (!movieData || !movieCasts) {
     notFound();
   }
 
   return (
-    <div>
-      <div>
-        <Image
-          src={`${process.env.IMAGE_URL}${movieData.poster_path}`}
-          alt={`${movieData.title} poster`}
-          width={100}
-          height={100}
-        />
+    <div className={styles["movie-details-page"]}>
+      <div className={styles["movie-details-page__movie-details"]}>
+        <MovieDetails movieData={movieData} movieCasts={movieCasts} />
       </div>
-      <div>
-        <Image
-          src={`${process.env.IMAGE_URL}${movieData.backdrop_path}`}
-          alt={`${movieData.title} poster`}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>{movieData.title}</div>
-      <div>{movieData.overview}</div>
-      <div>{movieData.vote_count}</div>
-      <div>{movieData.genre_ids}</div>
-      <div>Duration</div>
-      <div>Country</div>
-      <div>Casts</div>
     </div>
   );
 }

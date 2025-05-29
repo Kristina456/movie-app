@@ -7,6 +7,8 @@ export interface MovieItem {
   backdrop_path: string;
   genre_ids: number[];
   id: number;
+  genres: MovieGenre[];
+  runtime: number;
   original_language: string;
   original_title: string;
   overview: string;
@@ -17,4 +19,10 @@ export interface MovieItem {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  origin_country: string[];
+}
+
+export interface MovieGenre {
+  id: number;
+  name: string;
 }
