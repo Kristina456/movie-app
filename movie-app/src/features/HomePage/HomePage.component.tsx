@@ -7,21 +7,16 @@ import { NewestMovies } from "@/components/NewestMovies/NewestMovies.component";
 interface Props {
   newestMovies: MoviesData;
   topRatedMovies: MoviesData;
-  popularMovies: MoviesData;
 }
 
-export function HomePage({
-  newestMovies,
-  topRatedMovies,
-  popularMovies,
-}: Props) {
+export function HomePage({ newestMovies, topRatedMovies }: Props) {
   return (
     <div className={styles["home-page"]}>
       <section className={styles["home-page__top-rated"]}>
         <TopRatedMovies topRatedMovies={topRatedMovies} />
       </section>
       <section className={styles["home-page__popular"]}>
-        <PopularMovies popularMovies={popularMovies} />
+        <PopularMovies />
       </section>
       <section className={styles["home-page__newest-movies"]}>
         <NewestMovies newestMovies={newestMovies} />

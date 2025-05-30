@@ -6,37 +6,51 @@
   margin-bottom: 10px;
 }
 
+.popular-movies__genre-title {
+  color: #fff;
+  font-size: 30px;
+  margin: 0 0 20px 20px;
+}
+
 .popular-movies__slider {
   width: 90%;
   margin: 0 auto;
   position: relative;
-
-  :global(.custom-prev) {
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    background-color: transparent;
-    border: none;
-    transform: rotate(180deg);
-    cursor: pointer;
-    background-color: $color-secondary;
-    border-radius: 50%;
-  }
-
-  :global(.custom-next) {
-    position: absolute;
-    right: -60px;
-    top: 50%;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    background-color: $color-secondary;
-    border-radius: 50%;
-  }
 
   :global(.swiper-slide) {
     height: unset;
     z-index: 300;
     padding: 20px 10px;
   }
+}
+
+.popular-movies__genre-wrapper {
+  position: relative;
+  margin: 40px 0;
+}
+
+.popular-movies__button-preview,
+.popular-movies__button-next {
+  background-color: transparent;
+  background-color: $color-secondary;
+  border-radius: 50%;
+  button {
+    border-radius: 50%;
+    margin: 0px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.popular-movies__button-preview {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: rotate(180deg);
+}
+
+.popular-movies__button-next {
+  position: absolute;
+  right: 0px;
+  top: 50%;
 }
