@@ -1,4 +1,3 @@
-// app/api/search/route.ts
 import { getSearchedMovies } from "@/lib/apiService";
 import { NextResponse } from "next/server";
 

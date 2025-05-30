@@ -338,13 +338,6 @@
   cursor: pointer;
 }
 
-.movie-filters__genre:hover,
-.movie-filters__filter select:hover,
-.movie-filters__filter button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: white;
-}
-
 .movie-filters__filters-wrapper {
   position: fixed;
   top: 0;
@@ -526,13 +519,6 @@
   cursor: pointer;
 }
 
-.movie-filters__genre:hover,
-.movie-filters__filter select:hover,
-.movie-filters__filter button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: white;
-}
-
 .movie-filters__filters-wrapper {
   position: fixed;
   top: 0;
@@ -572,7 +558,8 @@
   }
 }
 
-.movie-filters__genre.movie-filters__genre--selected {
+.movie-filters__genre.movie-filters__genre--selected,
+.movie-filters__genre.movie-filters__genre--selected:hover {
   background-color: #fff;
   color: #000;
 }

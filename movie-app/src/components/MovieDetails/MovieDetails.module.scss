@@ -57,6 +57,7 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #fff;
+  margin-right: 20px;
 }
 
 .movie-details__overview {
@@ -82,11 +83,20 @@
   }
 }
 
-.movie-details__favorite-movie {
+.movie-details__close-button {
   position: absolute;
-  top: 20px;
   right: 20px;
+  top: 20px;
   z-index: 10;
+  button {
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 50%;
+  }
+}
+
+.movie-details__title-wrapper {
+  display: flex;
 }
 
 .movie-details__vote-average {

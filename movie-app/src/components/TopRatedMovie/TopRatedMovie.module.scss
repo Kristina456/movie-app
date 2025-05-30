@@ -51,3 +51,10 @@
     border-radius: 20px;
   }
 }
+
+.top-rated-movie__favorite-movie {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 10px;
+}

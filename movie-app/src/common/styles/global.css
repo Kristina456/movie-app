@@ -40,3 +40,15 @@ a {
   max-width: var(--size-wrapper);
   padding: 0 var(--wrapper-padding);
 }
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--navigation-height));
+  color: #fff;
+  div {
+    margin-bottom: 20px;
+  }
+}

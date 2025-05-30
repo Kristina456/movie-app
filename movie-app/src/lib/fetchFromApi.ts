@@ -12,14 +12,14 @@ export async function fetchFromApi(endpoint: string) {
     },
   };
 
-  const res = await fetch(`${process.env.BASE_URL}${endpoint}`, options);
+  const response = await fetch(`${process.env.BASE_URL}${endpoint}`, options);
 
-  if (!res.ok) {
-    const status = res.status;
-    const statusText = res.statusText;
+  if (!response.ok) {
+    const status = response.status;
+    const statusText = response.statusText;
     throw new Error(`API request failed with status ${status}: ${statusText}`);
   }
 
-  const data = await res.json();
+  const data = await response.json();
   return data;
 }

@@ -34,10 +34,11 @@ export function MostWatchedPage() {
       : "";
 
     try {
-      const res = await fetch(
+      const response = await fetch(
         `/api/most-watched?page=${page}${yearQuery}${genreQuery}${voteAverageQuery}`
       );
-      const data: MoviesData = await res.json();
+
+      const data: MoviesData = await response.json();
 
       if (data.results.length === 0) {
         setHasMore(false);
@@ -56,8 +57,8 @@ export function MostWatchedPage() {
   const fetchGenres = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/genre`);
-      const data: MoviesGenres = await res.json();
+      const response = await fetch(`/api/genre`);
+      const data: MoviesGenres = await response.json();
       setGenres(data.genres);
     } catch (error) {
       console.error("Error fetching genres:", error);
@@ -71,7 +72,6 @@ export function MostWatchedPage() {
   }, []);
 
   useEffect(() => {
-    if (page === 1) return;
     fetchMovies(
       page,
       movieYear !== null ? movieYear : undefined,

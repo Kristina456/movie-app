@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./TopRatedMovie.module.scss";
 import { MovieItem } from "@/types/MoviesData.dto";
 import Image from "next/image";
+import { FavoriteMovieButton } from "../FavoriteMovieButton/FavoriteMovieButton.component";
 
 interface Props {
   movie: MovieItem;
@@ -10,6 +11,12 @@ interface Props {
 export function TopRatedMovie({ movie }: Props) {
   return (
     <div className={styles["top-rated-movie"]}>
+      <div className={styles["top-rated-movie__favorite-movie"]}>
+        <FavoriteMovieButton
+          movieId={movie.id}
+          movieName={movie.original_title}
+        />
+      </div>
       <Link
         href={{
           pathname: `/movies/${movie.id}`,

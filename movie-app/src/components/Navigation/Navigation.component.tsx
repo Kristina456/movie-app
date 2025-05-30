@@ -33,7 +33,7 @@ export function Navigation() {
         </Link>
         <Link
           className={`${styles["navigation__link"]} ${pathname === "/most-watched" ? styles["navigation__link--active"] : ""}`}
-          href="./most-watched"
+          href="/most-watched"
         >
           Most watched
         </Link>

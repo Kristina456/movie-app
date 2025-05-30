@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./MovieDetails.module.scss";
 import { MovieItem } from "@/types/MoviesData.dto";
@@ -11,6 +13,8 @@ interface Props {
 }
 
 export function MovieDetails({ movieData, movieCasts }: Props) {
+  const router = useRouter();
+
   return (
     <div className={styles["movie-details"]}>
       <div className={styles["movie-details__backdrop"]}>
@@ -22,11 +26,8 @@ export function MovieDetails({ movieData, movieCasts }: Props) {
         />
         <div className={styles["movie-details__backdrop-overlay"]}></div>
       </div>
-      <div className={styles["movie-details__favorite-movie"]}>
-        <FavoriteMovieButton
-          movieId={movieData.id}
-          movieName={movieData.original_title}
-        />
+      <div className={styles["movie-details__close-button"]}>
+        <button onClick={() => router.back()}>X</button>
       </div>
       <div className={styles["movie-details__content"]}>
         <div className={styles["movie-details__poster"]}>
@@ -49,8 +50,16 @@ export function MovieDetails({ movieData, movieCasts }: Props) {
           </div>
         </div>
         <div className={styles["movie-details__info"]}>
-          <div className={styles["movie-details__title"]}>
-            {movieData.title}
+          <div className={styles["movie-details__title-wrapper"]}>
+            <div className={styles["movie-details__title"]}>
+              {movieData.title}
+            </div>
+            <div className={styles["movie-details__favorite-movie"]}>
+              <FavoriteMovieButton
+                movieId={movieData.id}
+                movieName={movieData.original_title}
+              />
+            </div>
           </div>
           <div className={styles["movie-details__genres"]}>
             {movieData.genres.map((genre, index) => (
