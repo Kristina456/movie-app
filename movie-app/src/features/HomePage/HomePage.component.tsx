@@ -12,6 +12,7 @@ interface Props {
 export function HomePage({ newestMovies, topRatedMovies }: Props) {
   return (
     <div className={styles["home-page"]}>
+      <h1>Home page</h1>
       <section className={styles["home-page__top-rated"]}>
         <TopRatedMovies topRatedMovies={topRatedMovies} />
       </section>

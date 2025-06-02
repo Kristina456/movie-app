@@ -32,7 +32,7 @@
 .popular-movies__button-preview,
 .popular-movies__button-next {
   background-color: transparent;
-  background-color: $color-secondary;
+  background-color: variables.$color-secondary;
   border-radius: 50%;
   button {
     border-radius: 50%;
@@ -55,7 +55,7 @@
   top: 50%;
 }
 
-@include mq-tablet-and-mobile {
+@include mixins.mq-tablet-and-mobile {
   .popular-movies__button-preview {
     margin-right: 20px;
   }

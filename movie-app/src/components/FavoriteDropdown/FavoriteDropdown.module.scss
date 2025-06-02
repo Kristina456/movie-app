@@ -19,13 +19,13 @@
 }
 
 .favorite-dropdown__movie {
-  border-bottom: 1px solid $color-secondary;
+  border-bottom: 1px solid variables.$color-secondary;
   display: flex;
   padding: 10px 0;
 }
 
 .favorite-dropdown__movie:hover {
-  color: $color-primary;
+  color: variables.$color-primary;
 }
 
 .favorite-dropdown__movie:last-child {

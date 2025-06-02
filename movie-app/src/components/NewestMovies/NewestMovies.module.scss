@@ -11,13 +11,13 @@
   margin: 0px 10px 10px 0px;
 }
 
-@include mq-tablet-and-mobile {
+@include mixins.mq-tablet-and-mobile {
   .newest-movies__movie {
     width: calc(100% / 4 - 10px);
   }
 }
 
-@include mq-mobile {
+@include mixins.mq-mobile {
   .newest-movies__movie {
     width: calc(100% / 2 - 10px);
   }

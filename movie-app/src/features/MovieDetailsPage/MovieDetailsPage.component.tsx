@@ -1,25 +1,20 @@
-import { notFound } from "next/navigation";
-import { getMovieCasts, getMovieDetails } from "@/lib/apiService";
 import { MovieDetails } from "@/components/MovieDetails/MovieDetails.component";
+import { MovieCasts } from "@/types/CastsData.dto";
+import { MovieItem } from "@/types/MoviesData.dto";
 import styles from "./MovieDetailsPage.module.scss";
 
 interface Props {
-  params: { id: string };
+  movieData: MovieItem;
+  movieCasts: MovieCasts;
 }
 
-export async function MovieDetailsPage({ params }: Props) {
-  const movieData = await getMovieDetails(params.id);
-  const movieCasts = await getMovieCasts(params.id);
-
-  if (!movieData || !movieCasts) {
-    notFound();
-  }
-
+export async function MovieDetailsPage({ movieData, movieCasts }: Props) {
   return (
     <div className={styles["movie-details-page"]}>
-      <div className={styles["movie-details-page__movie-details"]}>
+      <h1>Movie details</h1>
+      <section className={styles["movie-details-page__movie-details"]}>
         <MovieDetails movieData={movieData} movieCasts={movieCasts} />
-      </div>
+      </section>
     </div>
   );
 }

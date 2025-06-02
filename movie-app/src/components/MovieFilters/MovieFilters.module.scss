@@ -18,8 +18,8 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: calc(100% - 40px);
   color: #fff;
 }
@@ -37,7 +37,7 @@
   padding: 10px;
   background-color: rgb(255, 255, 255);
   border: none;
-  box-shadow: $box-shadow-primary;
+  box-shadow: variables.$box-shadow-primary;
   cursor: pointer;
 }
 
@@ -103,7 +103,7 @@
   }
 }
 
-@include mq-tablet-and-mobile {
+@include mixins.mq-tablet-and-mobile {
   .movie-filters__filter {
     width: 90%;
   }

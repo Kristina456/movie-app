@@ -3,7 +3,7 @@
   background-color: transparent;
   width: 100%;
   height: 100%;
-  box-shadow: $box-shadow-secondary;
+  box-shadow: variables.$box-shadow-secondary;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -16,10 +16,10 @@
 }
 
 .top-rated-movie__title {
-  font-size: fluid(20px, 30px);
+  font-size: functions.fluid(20px, 30px);
   font-weight: 800;
   max-width: 90%;
-  margin-bottom: fluid(10px, 20px);
+  margin-bottom: functions.fluid(10px, 20px);
 }
 
 .top-rated-movie__link {
@@ -30,7 +30,7 @@
 }
 
 .top-rated-movie__wrapper {
-  padding: fluid(10px, 20px);
+  padding: functions.fluid(10px, 20px);
   z-index: 1;
   background: linear-gradient(
     0deg,
@@ -61,5 +61,5 @@
 }
 
 .top-rated-movie__overview {
-  font-size: fluid(14px, 20px);
+  font-size: functions.fluid(14px, 20px);
 }

@@ -44,6 +44,7 @@ export function FavoriteDropdown() {
       className={styles["favorite-dropdown"]}
       onMouseEnter={() => setShowFavorites(true)}
       onMouseLeave={() => setShowFavorites(false)}
+      onClick={() => setShowFavorites(!showFavorites)}
     >
       <button className={styles["favorite-dropdown__button"]}>
         <Image
@@ -66,7 +67,7 @@ export function FavoriteDropdown() {
                 </li>
               ))
             ) : (
-              <li>No favorites yet</li>
+              <li>No favorites yet...</li>
             )}
           </ul>
         </div>

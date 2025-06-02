@@ -35,7 +35,7 @@ export function MovieCard({ movie }: Props) {
             </div>
           )}
         </div>
-        <div className={styles["movie-card__title"]}>{movie.title}</div>
+        <p className={styles["movie-card__title"]}>{movie.title}</p>
       </Link>
     </div>
   );

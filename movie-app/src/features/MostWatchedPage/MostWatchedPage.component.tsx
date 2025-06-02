@@ -120,20 +120,23 @@ export function MostWatchedPage() {
 
   return (
     <div className={styles["most-watched-page"]}>
-      <MovieFilters
-        genres={genres}
-        setSelectedGenre={setSelectedGenre}
-        selectedGenre={selectedGenre || []}
-        movieYear={movieYear}
-        setMovieYear={setMovieYear}
-        voteAverage={voteAverage}
-        setVoteAverage={setVoteAverage}
-        handleResetFilters={handleResetFilters}
-        handleSearch={handleSearch}
-        showFilter={showFilter}
-        setShowFilter={setShowFilter}
-      />
-      {handleShowMostWatchedList()}
+      <h1>Most watched</h1>
+      <section>
+        <MovieFilters
+          genres={genres}
+          setSelectedGenre={setSelectedGenre}
+          selectedGenre={selectedGenre || []}
+          movieYear={movieYear}
+          setMovieYear={setMovieYear}
+          voteAverage={voteAverage}
+          setVoteAverage={setVoteAverage}
+          handleResetFilters={handleResetFilters}
+          handleSearch={handleSearch}
+          showFilter={showFilter}
+          setShowFilter={setShowFilter}
+        />
+      </section>
+      <section> {handleShowMostWatchedList()}</section>
       <div className={styles["observer-ref"]} ref={observerRef} />
       {isLoading && <Loading />}
     </div>

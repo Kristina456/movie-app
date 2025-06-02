@@ -6,9 +6,9 @@
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
-  color: $color-tertiary;
+  color: variables.$color-tertiary;
   background-color: #111;
-  box-shadow: $box-shadow-primary;
+  box-shadow: variables.$box-shadow-primary;
 }
 
 .movie-details__backdrop-overlay {
@@ -34,17 +34,18 @@
   z-index: 2;
   display: flex;
   flex-direction: row;
-  gap: fluid(10px, 40px);
-  padding: fluid(10px, 40px);
+  gap: functions.fluid(10px, 40px);
+  padding: functions.fluid(10px, 40px);
   align-items: flex-start;
 }
 
 .movie-details__poster {
   width: 20%;
+
   img {
     border-radius: 12px;
-    box-shadow: $box-shadow-secondary;
-    width: fluid(100px, 200px);
+    box-shadow: variables.$box-shadow-secondary;
+    width: functions.fluid(100px, 200px);
     height: auto;
   }
 }
@@ -54,23 +55,23 @@
 }
 
 .movie-details__title {
-  font-size: fluid(30px, 50px);
+  font-size: functions.fluid(30px, 50px);
   font-weight: bold;
-  margin-bottom: fluid(10px, 20px);
+  margin-bottom: functions.fluid(10px, 20px);
   color: #fff;
   margin-right: 20px;
 }
 
 .movie-details__overview {
-  font-size: fluid(16px, 20px);
+  font-size: functions.fluid(16px, 20px);
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .movie-details__genres {
   display: flex;
-  font-size: fluid(16px, 20px);
-  margin-bottom: fluid(10px, 50px);
+  font-size: functions.fluid(16px, 20px);
+  margin-bottom: functions.fluid(10px, 50px);
   div {
     margin-right: 10px;
   }
@@ -83,8 +84,8 @@
   z-index: 10;
   button {
     cursor: pointer;
-    width: fluid(30px, 40px);
-    height: fluid(30px, 40px);
+    width: functions.fluid(30px, 40px);
+    height: functions.fluid(30px, 40px);
     border-radius: 50%;
     border: none;
   }
@@ -115,19 +116,19 @@
 }
 
 .movie-details__vote-average {
-  margin-top: fluid(10px, 20px);
+  margin-top: functions.fluid(10px, 20px);
 }
 
 .movie-details__casts {
   display: flex;
   flex-wrap: wrap;
   div {
-    font-size: fluid(16px, 20px);
+    font-size: functions.fluid(16px, 20px);
     margin-right: 10px;
   }
 }
 
-@include mq-mobile {
+@include mixins.mq-mobile {
   .movie-details__info {
     width: 100%;
   }

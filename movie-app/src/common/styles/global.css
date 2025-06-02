@@ -14,6 +14,10 @@ body {
   min-height: 100vh;
   font-family: "Lexend", sans-serif;
   background-color: var(--background-color);
+
+  h1 {
+    display: none;
+  }
 }
 
 * {

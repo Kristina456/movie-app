@@ -29,16 +29,8 @@ export async function getTopRatedMovies(): Promise<MoviesData> {
   return await getMovieApiWithPath("movie/top_rated");
 }
 
-export async function getPopularMovies(query?: string): Promise<MoviesData> {
-  return await getMovieApiWithPath(`movie/popular${query || ""}`);
-}
-
 export async function getSearchedMovies(query: string): Promise<MoviesData> {
   return await getMovieApiWithPath(`search/movie?query=${query}`);
-}
-
-export async function getMovieCast(query: string): Promise<MoviesData> {
-  return await getMovieApiWithPath(`/movie/${query}/credits`);
 }
 
 export async function getMoviesGenres(): Promise<MoviesGenres> {

@@ -7,6 +7,7 @@
 - Node 22.14.0+
 - NPM 10.9.2+
 - Next.js 15.3.2
+- Swiper 11.2.8
 
 ### Development
 

@@ -1,3 +1,6 @@
+$size-wrapper: 1188px;
+$size-rem: 16px;
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }

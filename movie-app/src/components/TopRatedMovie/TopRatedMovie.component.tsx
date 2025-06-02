@@ -34,10 +34,10 @@ export function TopRatedMovie({ movie }: Props) {
           )}
         </div>
         <div className={styles["top-rated-movie__wrapper"]}>
-          <div className={styles["top-rated-movie__title"]}>{movie.title}</div>
-          <div className={styles["top-rated-movie__overview"]}>
+          <h3 className={styles["top-rated-movie__title"]}>{movie.title}</h3>
+          <p className={styles["top-rated-movie__overview"]}>
             {movie.overview.slice(0, 100) || "There is no overview for now"}...
-          </div>
+          </p>
         </div>
       </Link>
     </div>

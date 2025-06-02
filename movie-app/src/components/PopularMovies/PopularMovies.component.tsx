@@ -10,6 +10,7 @@ import Image from "next/image";
 import { MovieCard } from "../MovieCard/MovieCard.component";
 import { Genre } from "@/types/MoviesGenres.dto";
 import { useEffect, useState } from "react";
+import { Loading } from "../Loading/Loading.component";
 
 type MoviesList = { genre: Genre; movies: MovieItem[] }[];
 
@@ -35,7 +36,11 @@ export function PopularMovies() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (
@@ -46,9 +51,9 @@ export function PopularMovies() {
       {moviesData.map((item, index) => (
         <div key={index} className={styles["popular-movies__genre-wrapper"]}>
           <div className={styles["popular-movies__buttons-wrapper"]}>
-            <div className={styles["popular-movies__genre-title"]}>
+            <h3 className={styles["popular-movies__genre-title"]}>
               {item.genre.name}
-            </div>
+            </h3>
             <div className={styles["popular-movies__buttons"]}>
               <div className={styles["popular-movies__button-preview"]}>
                 <button className={`swiper-button-prev custom-prev-${index} `}>
@@ -72,7 +77,6 @@ export function PopularMovies() {
               </div>
             </div>
           </div>
-
           <div className={styles["popular-movies__slider"]}>
             <Swiper
               spaceBetween={10}

@@ -6,10 +6,10 @@
   margin: 10px;
   margin-left: 0px;
   width: calc(100% / 3 - 10px);
-  min-height: fluid(180px, 350px);
+  min-height: functions.fluid(180px, 350px);
 }
 
-@include mq-mobile {
+@include mixins.mq-mobile {
   .top-rated-movies__wrapper {
     display: flex;
     flex-direction: column;

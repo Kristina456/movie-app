@@ -16,7 +16,7 @@
   margin-top: 40px;
 }
 
-@include mq-tablet-and-mobile {
+@include mixins.mq-tablet-and-mobile {
   .most-watched-list {
     width: 100%;
   }
@@ -27,7 +27,7 @@
   }
 }
 
-@include mq-mobile {
+@include mixins.mq-mobile {
   .most-watched-list__movie-card {
     min-width: calc(100% / 2 - 40px);
   }
