@@ -4,8 +4,8 @@ import Image from "next/image";
 
 interface Props {
   genres: Genre[];
-  setGenre: (genreId: number | null) => void;
-  genre: number | null;
+  setSelectedGenre: (genreIds: number[]) => void;
+  selectedGenre: number[];
   movieYear: number | null;
   setMovieYear: (year: number | null) => void;
   voteAverage?: number | null;
@@ -18,8 +18,8 @@ interface Props {
 
 export function MovieFilters({
   genres,
-  setGenre,
-  genre,
+  setSelectedGenre,
+  selectedGenre,
   movieYear,
   setMovieYear,
   voteAverage,
@@ -31,6 +31,18 @@ export function MovieFilters({
 }: Props) {
   const handleShowFilter = () => {
     setShowFilter(!showFilter);
+  };
+
+  const handleSelectGenre = (genreItem: Genre) => {
+    if (selectedGenre.includes(genreItem.id)) {
+      const index = selectedGenre.indexOf(genreItem.id);
+      if (index !== -1) {
+        selectedGenre.splice(index, 1);
+        setSelectedGenre([...selectedGenre]);
+      }
+    } else {
+      setSelectedGenre([...selectedGenre, genreItem.id]);
+    }
   };
 
   return (
@@ -45,13 +57,15 @@ export function MovieFilters({
         <div className={styles["movie-filters__filters-wrapper"]}>
           <div className={styles["movie-filters__filter"]}>
             <div className={styles["movie-filters__title"]}>Genre: </div>
-            {genres.map((selectedGenre) => (
+            {genres.map((genreItem) => (
               <button
-                onClick={() => setGenre(selectedGenre.id)}
-                className={`${styles["movie-filters__genre"]} ${genre === selectedGenre.id ? styles["movie-filters__genre--selected"] : ""}`}
-                key={selectedGenre.id}
+                onClick={() => {
+                  handleSelectGenre(genreItem);
+                }}
+                className={`${styles["movie-filters__genre"]} ${selectedGenre.includes(genreItem.id) ? styles["movie-filters__genre--selected"] : ""}`}
+                key={genreItem.id}
               >
-                {selectedGenre.name}
+                {genreItem.name}
               </button>
             ))}
             <div className={styles["movie-filters__select"]}>
