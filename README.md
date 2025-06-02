@@ -28,3 +28,23 @@ Start the production environment for the project. Usage: `npm run start`.
 ### `build`
 
 Create a production build of the project. Usage: `npm run build`.
+
+## Docker
+
+Building an image
+
+```
+ docker build -t movie-app:{tag} .
+```
+
+Starting docker container
+
+```
+docker compose up
+```
+
+Stopping docker container
+
+```
+docker compose down
+```
