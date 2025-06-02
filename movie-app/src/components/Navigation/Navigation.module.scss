@@ -10,15 +10,77 @@
   background-color: rgb(241, 241, 241);
 }
 
-.navigation__link {
+.navigation__link,
+.navigation__links-wrapper {
   margin-right: 20px;
   display: flex;
   align-items: center;
   &--active {
-    color: $color-primary;
+    color: variables.$color-primary;
   }
 }
 
-.navigation__links {
+.navigation__wrapper {
   display: flex;
+}
+
+.navigation__hamburger,
+.navigation__links--mobile {
+  display: none;
+}
+
+@include mixins.mq-tablet-and-mobile {
+  .navigation__links--desktop {
+    display: none;
+  }
+
+  .navigation__hamburger,
+  .navigation__links--mobile {
+    display: block;
+    background-color: #fff;
+  }
+
+  .navigation__hamburger {
+    z-index: 10;
+    button {
+      border: none;
+    }
+  }
+
+  .navigation__links--mobile {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: c;
+  }
+
+  .navigation__wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 30px;
+    grid-template-areas:
+      "link link"
+      "search favorites";
+    gap: 4px;
+  }
+
+  .navigation__links-wrapper {
+    grid-area: link;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+
+  .navigation__search-bar {
+    grid-area: search;
+  }
+
+  .navigation__favorites {
+    grid-area: favorites;
+  }
 }
