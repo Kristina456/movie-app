@@ -12,7 +12,10 @@ export async function fetchFromApi(endpoint: string) {
     },
   };
 
-  const response = await fetch(`${process.env.BASE_URL}${endpoint}`, options);
+  const response = await fetch(`${process.env.BASE_URL}${endpoint}`, {
+    ...options,
+    cache: "no-store",
+  });
 
   if (!response.ok) {
     const status = response.status;

@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 import type { RuleSetRule, RuleSetUse } from "webpack";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   images: {
     domains: ["image.tmdb.org"],
   },

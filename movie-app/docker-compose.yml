@@ -1,0 +1,7 @@
+services:
+  web:
+    image: "movie-app:0.0.2"
+    volumes:
+      - ".env:/app/.env.production:rw"
+    ports:
+      - '3000:3000'
