@@ -6,4 +6,17 @@
   margin: 10px;
   margin-left: 0px;
   width: calc(100% / 3 - 10px);
+  min-height: fluid(180px, 350px);
+}
+
+@include mq-mobile {
+  .top-rated-movies__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-rated-movies__movie {
+    width: 100%;
+    min-height: 200px;
+  }
 }

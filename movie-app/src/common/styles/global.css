@@ -34,6 +34,7 @@ a {
 }
 
 .children-wrapper {
+  margin: 0 auto;
   margin-top: var(--navigation-height);
   overflow-y: auto;
   height: calc(100vh - var(--navigation-height));

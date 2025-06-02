@@ -10,3 +10,15 @@
   width: calc(100% / 6 - 10px);
   margin: 0px 10px 10px 0px;
 }
+
+@include mq-tablet-and-mobile {
+  .newest-movies__movie {
+    width: calc(100% / 4 - 10px);
+  }
+}
+
+@include mq-mobile {
+  .newest-movies__movie {
+    width: calc(100% / 2 - 10px);
+  }
+}

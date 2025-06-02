@@ -1,0 +1,20 @@
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function rem($px, $rem: $size-rem) {
+  @return #{strip-unit($px) / strip-unit($rem)}rem;
+}
+
+// @see https://www.aleksandrhovhannisyan.com/blog/fluid-type-scale-with-css-clamp/
+@function fluid($min-px, $max-px, $min-vw: 400px, $max-vw: $size-wrapper) {
+  $slope: ($max-px - $min-px) / ($max-vw - $min-vw);
+  $slope-vw: $slope * 100;
+  $preferred-px: $min-px - $slope * $min-vw;
+
+  @return clamp(
+    #{rem($min-px)},
+    #{$slope-vw}vw + #{rem($preferred-px)},
+    #{rem($max-px)}
+  );
+}

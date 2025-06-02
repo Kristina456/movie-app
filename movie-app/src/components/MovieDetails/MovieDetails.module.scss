@@ -22,7 +22,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-
   img {
     object-fit: cover;
     filter: blur(3px);
@@ -35,49 +34,43 @@
   z-index: 2;
   display: flex;
   flex-direction: row;
-  gap: 40px;
-  padding: 40px;
+  gap: fluid(10px, 40px);
+  padding: fluid(10px, 40px);
   align-items: flex-start;
 }
 
 .movie-details__poster {
-  flex-shrink: 0;
+  width: 20%;
   img {
     border-radius: 12px;
     box-shadow: $box-shadow-secondary;
+    width: fluid(100px, 200px);
+    height: auto;
   }
 }
 
 .movie-details__info {
-  flex: 1;
+  width: 80%;
 }
 
 .movie-details__title {
-  font-size: 36px;
+  font-size: fluid(30px, 50px);
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: fluid(10px, 20px);
   color: #fff;
   margin-right: 20px;
 }
 
 .movie-details__overview {
-  font-size: 16px;
+  font-size: fluid(16px, 20px);
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.movie-details__meta {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #aaa;
-}
-
 .movie-details__genres {
   display: flex;
-  font-size: 14px;
-  margin-bottom: 50px;
+  font-size: fluid(16px, 20px);
+  margin-bottom: fluid(10px, 50px);
   div {
     margin-right: 10px;
   }
@@ -90,8 +83,10 @@
   z-index: 10;
   button {
     cursor: pointer;
-    padding: 20px;
+    width: fluid(30px, 40px);
+    height: fluid(30px, 40px);
     border-radius: 50%;
+    border: none;
   }
 }
 
@@ -99,18 +94,57 @@
   display: flex;
 }
 
-.movie-details__vote-average {
-  margin-top: 40px;
+.movie-details__original-country {
+  display: flex;
+}
+
+.movie-details__original-country-name {
+  margin-right: 10px;
+}
+
+.movie-details__original-country-image {
+  display: flex;
+  align-items: center;
 }
 
 .movie-details__runtime,
-.movie-details__original-country {
+.movie-details__original-country,
+.movie-details__vote-average {
   margin-top: 10px;
+  font-size: 16px;
+}
+
+.movie-details__vote-average {
+  margin-top: fluid(10px, 20px);
 }
 
 .movie-details__casts {
   display: flex;
+  flex-wrap: wrap;
   div {
+    font-size: fluid(16px, 20px);
     margin-right: 10px;
+  }
+}
+
+@include mq-mobile {
+  .movie-details__info {
+    width: 100%;
+  }
+
+  .movie-details__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie-details__poster {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .movie-details__details-wrapper {
+    margin-left: 10px;
   }
 }

@@ -54,3 +54,32 @@
   right: 0px;
   top: 50%;
 }
+
+@include mq-tablet-and-mobile {
+  .popular-movies__button-preview {
+    margin-right: 20px;
+  }
+
+  .popular-movies__button-preview,
+  .popular-movies__button-next {
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    img,
+    button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .popular-movies__buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .popular-movies__buttons {
+    display: flex;
+  }
+}

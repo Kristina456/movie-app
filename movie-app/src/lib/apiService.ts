@@ -41,6 +41,10 @@ export async function getMovieCast(query: string): Promise<MoviesData> {
   return await getMovieApiWithPath(`/movie/${query}/credits`);
 }
 
+export async function getMoviesGenres(): Promise<MoviesGenres> {
+  return await getMovieApiWithPath("genre/movie/list");
+}
+
 export async function getPopularMoviesWithPage(
   page: string,
   genre?: string,
@@ -60,10 +64,6 @@ export async function getPopularMoviesWithPage(
     url += `&vote_average.gte=${voteAverage}&vote_average.lte=${voteAverage}`;
   }
   return await getMovieApiWithPath(url);
-}
-
-export async function getMoviesGenre(): Promise<MoviesGenres> {
-  return await getMovieApiWithPath("genre/movie/list");
 }
 
 async function getMovieApiWithPath<T>(path: string): Promise<T> {

@@ -64,7 +64,7 @@ export function SearchBar() {
                   onClick={handleHideResults}
                 >
                   <Image
-                    src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${movie.poster_path}`}
                     alt={`${movie.title} poster`}
                     width={60}
                     height={100}

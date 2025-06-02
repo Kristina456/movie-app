@@ -37,16 +37,26 @@ export function MovieDetails({ movieData, movieCasts }: Props) {
             width={200}
             height={300}
           />
-          <div className={styles["movie-details__vote-average"]}>
-            ⭐ {movieData.vote_average.toFixed(1)} / 10
-          </div>
-          <div className={styles["movie-details__runtime"]}>
-            ⏰ {formatRuntime(movieData.runtime)}
-          </div>
-          <div className={styles["movie-details__original-country"]}>
-            {movieData.origin_country.map((country, index) => (
-              <div key={index}> 🌍 {country}</div>
-            ))}
+          <div className={styles["movie-details__details-wrapper"]}>
+            <div className={styles["movie-details__vote-average"]}>
+              ⭐ {movieData.vote_average.toFixed(1)} / 10
+            </div>
+            <div className={styles["movie-details__runtime"]}>
+              ⏰ {formatRuntime(movieData.runtime)}
+            </div>
+            <div className={styles["movie-details__original-country"]}>
+              <div className={styles["movie-details__original-country-image"]}>
+                🌍
+              </div>
+              {movieData.origin_country.map((country, index) => (
+                <div
+                  className={styles["movie-details__original-country-name"]}
+                  key={index}
+                >
+                  {country}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className={styles["movie-details__info"]}>
