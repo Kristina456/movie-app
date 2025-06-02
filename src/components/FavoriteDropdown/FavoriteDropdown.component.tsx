@@ -47,12 +47,7 @@ export function FavoriteDropdown() {
       onClick={() => setShowFavorites(!showFavorites)}
     >
       <button className={styles["favorite-dropdown__button"]}>
-        <Image
-          src="./images/star.svg"
-          alt="star image"
-          width={20}
-          height={20}
-        />
+        <Image src="/images/star.svg" alt="star image" width={20} height={20} />
       </button>
       {showFavorites && (
         <div className={styles["favorite-dropdown__content"]}>

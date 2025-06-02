@@ -37,6 +37,9 @@
   gap: functions.fluid(10px, 40px);
   padding: functions.fluid(10px, 40px);
   align-items: flex-start;
+  height: 80vh;
+  overflow-y: auto;
+  margin-bottom: 40px;
 }
 
 .movie-details__poster {

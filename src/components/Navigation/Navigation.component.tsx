@@ -49,7 +49,7 @@ export function Navigation() {
       <div>
         <Link className={styles["navigation__link"]} href="/">
           <Image
-            src="./images/logo.svg"
+            src="/images/logo.svg"
             alt="logo image"
             width={100}
             height={50}
@@ -59,7 +59,7 @@ export function Navigation() {
       <div className={styles["navigation__hamburger"]}>
         <button onClick={handleHamburgerClick}>
           <Image
-            src="./images/burger-menu.svg"
+            src="/images/burger-menu.svg"
             alt="hamburger"
             width={30}
             height={30}
